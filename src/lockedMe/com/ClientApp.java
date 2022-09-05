@@ -33,7 +33,8 @@ public class ClientApp {
 		
 		
 		}while(choice>0);
-
+		sc.close();
 	}
+	
 
 }
