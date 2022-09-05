@@ -19,6 +19,7 @@ public class ClientApp {
 			LockedMe.createNewFiles();
 			break;
 		case 3:
+			LockedMe.deleteFile();
 			break;
 		case 4:
 			break;

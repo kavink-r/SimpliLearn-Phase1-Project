@@ -16,6 +16,7 @@ public static void welcomeScreen()
 	System.out.println("\n\nENTER YOUR CHOICE:");
 	System.out.println("\n1. Display all files");
 	System.out.println("2. Create a new file");
+	System.out.println("3. Delete a file");
 }
 public static void getAllFiles() 
 {
@@ -53,5 +54,24 @@ public static void createNewFiles(){
 		e.printStackTrace();
 	}
 	
+}
+public static void deleteFile() {
+	try 
+	{
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the filename to be deleted:");
+	String filename = sc.nextLine();
+	File f = new File(FILES_PATH+"\\"+filename);
+	if(f.exists()) {
+		f.delete();
+		System.out.println("File deleted Successfully!!");
+	}
+	else {
+		System.out.println("File does not exists!!");
+	}
+	}
+	catch(Exception e) {
+		
+	}
 }
 }
