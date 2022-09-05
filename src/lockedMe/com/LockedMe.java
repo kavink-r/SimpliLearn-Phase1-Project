@@ -1,6 +1,9 @@
 package lockedMe.com;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class LockedMe {
 	public static final String FILES_PATH = "D:\\Kavin\\SimpliLearn-Phase1-Project\\Files";
@@ -12,6 +15,7 @@ public static void welcomeScreen()
 	System.out.println("***************************************************");
 	System.out.println("\n\nENTER YOUR CHOICE:");
 	System.out.println("\n1. Display all files");
+	System.out.println("2. Create a new file");
 }
 public static void getAllFiles() 
 {
@@ -26,5 +30,28 @@ public static void getAllFiles()
 	else {
 		System.out.println("\n------------------The Folder is empty!!------------------");
 	}
+}
+public static void createNewFiles(){
+	try {
+		Scanner sc = new Scanner (System.in);
+		String filename;
+		System.out.println("Enter the file name to be created:");
+		filename = sc.nextLine();
+		int linescount;
+		System.out.println("Enter the number of line to be written:");
+		linescount =Integer.parseInt(sc.nextLine());
+		
+		FileWriter fw = new FileWriter(FILES_PATH+"\\"+filename);
+		for(int i=0;i<linescount;i++) {
+			System.out.println("Enter the content to be written in the file");
+			fw.write(sc.nextLine()+ "\n");
+		}
+		System.out.println("Content written successfully!!");
+		fw.close();
+	} catch (IOException e) {
+		
+		e.printStackTrace();
+	}
+	
 }
 }

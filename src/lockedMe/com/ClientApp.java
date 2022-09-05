@@ -16,6 +16,7 @@ public class ClientApp {
 			LockedMe.getAllFiles();
 			break;
 		case 2:
+			LockedMe.createNewFiles();
 			break;
 		case 3:
 			break;
