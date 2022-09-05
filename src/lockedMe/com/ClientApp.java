@@ -22,6 +22,10 @@ public class ClientApp {
 			LockedMe.deleteFile();
 			break;
 		case 4:
+			LockedMe.searchFile();
+			break;
+		case 5:
+			System.exit(0);
 			break;
 		default:
 			break;

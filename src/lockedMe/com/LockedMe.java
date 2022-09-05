@@ -3,6 +3,7 @@ package lockedMe.com;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class LockedMe {
@@ -17,6 +18,8 @@ public static void welcomeScreen()
 	System.out.println("\n1. Display all files");
 	System.out.println("2. Create a new file");
 	System.out.println("3. Delete a file");
+	System.out.println("4. Search a file");
+	System.out.println("5. Exit");
 }
 public static void getAllFiles() 
 {
@@ -71,6 +74,31 @@ public static void deleteFile() {
 	}
 	}
 	catch(Exception e) {
+		
+	}
+}
+public static void searchFile() {
+	try
+	{
+		LinkedList<String> filenames = new LinkedList<String>();
+		Scanner obj= new Scanner(System.in);
+		String filename;
+		System.out.println("Enter the file to be searched for:");
+		filename=obj.nextLine();
+		File[] listOfFiles = new File(FILES_PATH).listFiles();
+		for(File f:listOfFiles) {
+			filenames.add(f.getName());
+		}
+		if(filenames.contains(filename)) {
+			System.out.println("The file is available!!!");
+		}
+		else {
+			System.out.println("The file is not available!!!");
+		}
+		
+	}
+	catch(Exception e)
+	{
 		
 	}
 }
