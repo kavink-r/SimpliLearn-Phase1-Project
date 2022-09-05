@@ -1,9 +1,32 @@
 package lockedMe.com;
 
+import java.util.Scanner;
+
 public class ClientApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		int choice;
+		Scanner sc = new Scanner(System.in);
+		do {
+		LockedMe.welcomeScreen();
+		choice = Integer.parseInt(sc.nextLine());
+		switch(choice) 
+		{
+		case 1:
+			LockedMe.getAllFiles();
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		default:
+			break;
+		}
+		
+		
+		}while(choice>0);
 
 	}
 
